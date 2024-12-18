@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+    <!-- Section Title -->
+    <div class="text-center mb-4">
+        <h1 class="display-4 fw-bold">About Me</h1>
+        <p class="text-muted">Cephas Acquah Forson</p>
+    </div>
+
+    <!-- About Summary -->
+    <div class="row mb-5">
+        <div class="col-md-10 mx-auto">
+            <p class="lead text-justify">
+                I am an accomplished AI/ML Engineer and researcher with professional experience spanning data science, machine learning, and spatial analytics. I bridge advanced algorithmic development, large-scale data management, and domain-specific applications spanning healthcare, wellness, and materials science.
+            </p>
+            <p>
+                With two Master's degrees—Data Science (Memorial University of Newfoundland, Canada) and GIS (University of Aberdeen, UK)—I bring a robust research foundation complemented by adaptive skill sets that drive technical excellence.
+            </p>
+        </div>
+    </div>
+
+    <!-- Key Highlights -->
+    <div class="row gx-5 mb-5">
+        <!-- Early Professional Experience -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="fw-semibold mb-3">Early Professional Experience</h3>
+                    <p>
+                        At Managem Group Ltd. (Guinea) and Ghana Manganese Company Ltd. (Ghana), I honed my GIS and database management expertise, optimized spatial data models, and developed ETL pipelines for large-scale datasets.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Academic and Research Focus -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="fw-semibold mb-3">Academic and Research Focus</h3>
+                    <p>
+                        As a Graduate Research Assistant at Memorial University, I specialized in machine learning for materials science. Leveraging Generative Adversarial Networks (GANs) and NLP, I modeled high-performance materials and their mechanical properties.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expertise in LLMs and NLP -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="fw-semibold mb-3">Expertise in LLMs and NLP</h3>
+                    <p>
+                        My work involves GPT-NeoX, Falcon, and LLaMA for NLP tasks, delivering actionable insights across healthcare applications and advanced AI-driven chatbots.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health and Wellness Domain -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="fw-semibold mb-3">Health and Wellness Domain</h3>
+                    <p>
+                        I leverage predictive modeling frameworks and recommendation systems to provide impactful solutions that integrate seamlessly with human needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="text-center mt-5 mb-5">
+        <h3 class="fw-bold">Collaboration and Future Endeavors</h3>
+        <p class="text-muted mx-auto" style="max-width: 800px;">
+            I strive to collaborate across industries, advancing AI applications to solve real-world challenges. As I progress toward doctoral studies, my focus remains on pioneering innovative solutions in machine learning and AI.
+        </p>
+    </div>
+
+    <!-- Resume Links -->
+    <div class="text-center">
+        <h3 class="fw-bold mb-4">My Resumes</h3>
+        <ul class="list-unstyled">
+            {% for file in cv_files %}
+            <li class="mb-2">
+                <a href="{{ url_for('static', filename='files/' ~ file) }}" class="btn btn-outline-primary" target="_blank">{{ file }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('static', filename='files/Cephas Acquah Forson MUN PHD STAT.pdf') }}" class="btn btn-primary" target="_blank">
+            View / Download Resume
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Image Gallery</h1>
+    <p class="lead">A collection of my favorite moments and achievements.</p>
+</div>
+
+<div class="row g-3">
+    {% for image in images %}
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename=image) }}" class="card-img-top" alt="Gallery Image">
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

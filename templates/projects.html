@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">My Projects</h1>
+    <p class="lead">Below is a list of my professional and portfolio projects.</p>
+</div>
+
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">{{ project.name }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{{ project.link }}" target="_blank" class="btn btn-outline-primary">View Project</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="text-center mb-5">
+    <h2> All Projects</h2>
+</div>
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ project.screenshot }}" class="card-img-top" alt="Project Screenshot">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{{ project.html_url }}" class="btn btn-outline-primary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

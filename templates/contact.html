@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Contact Me</h1>
+        <p class="lead text-muted">Feel free to get in touch by filling out the form below.</p>
+    </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Contact Form -->
+    <form method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+    </form>
+</div>
+{% endblock %}
