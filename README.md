@@ -161,7 +161,7 @@ This project is deployed using **Heroku**.
 ## **Gallery and Screenshots**
 
 ### **Home Page**
-![Home Page](static/images/banner.png)
+![Home Page](static/images/home.png)
 
 ### **Projects Page**
 ![Projects Page](static/images/projects.png)
